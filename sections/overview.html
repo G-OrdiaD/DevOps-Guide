@@ -1,0 +1,33 @@
+<section id="overview-content" class="content-section active">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">DevOps Workflow for a Real-time Chat App</h2>
+    <p class="text-lg text-gray-600 mb-8">This guide provides an interactive walkthrough of the process for containerizing, deploying, and scaling an application. Use the navigation on the left to explore each step in detail. The diagram below illustrates the complete workflow from local development to a scalable production environment. Click on any stage in the diagram to jump to that section.</p>
+    
+    <div class="bg-white p-6 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">Deployment Flow Diagram</h3>
+        <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center">
+            <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 w-48 cursor-pointer hover:bg-gray-100 transition" onclick="showSection('dockerize')">
+                <div class="text-2xl mb-2">📦</div>
+                <h4 class="font-semibold">1. Dockerize</h4>
+                <p class="text-sm text-gray-500">Package app into a container.</p>
+            </div>
+            <div class="text-2xl text-gray-400 font-mono">&rarr;</div>
+            <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 w-48 cursor-pointer hover:bg-gray-100 transition" onclick="showSection('build')">
+                <div class="text-2xl mb-2">🔨</div>
+                <h4 class="font-semibold">2. Build</h4>
+                <p class="text-sm text-gray-500">Build & test image locally.</p>
+            </div>
+            <div class="text-2xl text-gray-400 font-mono">&rarr;</div>
+            <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 w-48 cursor-pointer hover:bg-gray-100 transition" onclick="showSection('deploy')">
+                <div class="text-2xl mb-2">🚢</div>
+                <h4 class="font-semibold">3. Deploy</h4>
+                <p class="text-sm text-gray-500">Deploy to K8s with Helm.</p>
+            </div>
+            <div class="text-2xl text-gray-400 font-mono">&rarr;</div>
+            <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 w-48 cursor-pointer hover:bg-gray-100 transition" onclick="showSection('scale')">
+                <div class="text-2xl mb-2">📈</div>
+                <h4 class="font-semibold">4. Scale</h4>
+                <p class="text-sm text-gray-500">Autoscale with HPA.</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive DevOps Process Guide</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="data:,">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="text-gray-800">
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <aside class="w-full md:w-64 bg-white border-r border-gray-200 p-4 md:p-6">
+            <h1 class="text-xl font-bold text-gray-900 mb-6">DevOps Guide</h1>
+            <nav id="navigation" class="space-y-2">
+                <a href="#overview" class="nav-item flex items-center px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors duration-200 active">
+                    <span class="mr-3">🚀</span> Overview
+                </a>
+                <a href="#dockerize" class="nav-item flex items-center px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                    <span class="mr-3">📦</span> 1. Dockerize
+                </a>
+                <a href="#build" class="nav-item flex items-center px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                    <span class="mr-3">🔨</span> 2. Build & Test
+                </a>
+                <a href="#kubernetes" class="nav-item flex items-center px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                    <span class="mr-3">⚙️</span> 3. Setup Kubernetes
+                </a>
+                <a href="#helm" class="nav-item flex items-center px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                    <span class="mr-3">🧭</span> 4. Helm Chart
+                </a>
+                <a href="#deploy" class="nav-item flex items-center px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                    <span class="mr-3">🚢</span> 5. Deploy
+                </a>
+                <a href="#scale" class="nav-item flex items-center px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                    <span class="mr-3">📈</span> 6. Scale
+                </a>
+            </nav>
+        </aside>
+
+        <main id="content" class="flex-1 p-6 md:p-10">
+            <div id="section-container">
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/copy.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<section id="deploy-content" class="content-section">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">5. Deploy with Helm</h2>
+    <p class="text-lg text-gray-600 mb-8">With the Helm chart configured, you can now deploy your application to the local Kubernetes cluster with a single command.</p>
+    <div class="space-y-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Install the Helm Chart</h3>
+            <p class="text-gray-600 mb-4">This command installs the chart, creating a "release" named `my-chat-app`.</p>
+            <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <code>helm install my-chat-app ./chat-app-chart</code>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Verify the Deployment</h3>
+            <p class="text-gray-600 mb-4">Check that your application's pods and services are running correctly.</p>
+            <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <code>kubectl get pods
+kubectl get services</code>
+            </div>
+        </div>
+    </div>
+</section>

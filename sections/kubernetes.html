@@ -1,0 +1,20 @@
+<section id="kubernetes-content" class="content-section">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">3. Setup Local Kubernetes</h2>
+    <p class="text-lg text-gray-600 mb-8">We'll use Docker Desktop's built-in Kubernetes cluster, which is perfect for local development. It provides a single-node cluster that's easy to set up and manage.</p>
+
+    <div class="bg-white p-6 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Enable Kubernetes in Docker Desktop</h3>
+        <ol class="list-decimal list-inside text-gray-600 space-y-2">
+            <li>Open the Docker Desktop dashboard and go to <strong>Settings</strong>.</li>
+            <li>Navigate to the <strong>Kubernetes</strong> tab.</li>
+            <li>Check the <strong>"Enable Kubernetes"</strong> box.</li>
+            <li>Click <strong>"Apply & Restart"</strong>.</li>
+        </ol>
+        <p class="text-gray-600 mt-6 mb-4">After it starts, verify the setup by running this command in your terminal:</p>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <code>kubectl get nodes</code>
+        </div>
+        <p class="text-gray-600 mt-4">You should see a single node named `docker-desktop` with a `Ready` status.</p>
+    </div>
+</section>

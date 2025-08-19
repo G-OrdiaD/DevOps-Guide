@@ -1,0 +1,47 @@
+<section id="scale-content" class="content-section">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">6. Maintain and Scale</h2>
+    <p class="text-lg text-gray-600 mb-8">To handle varying loads, we'll use the 
+        <span class="tooltip">Horizontal Pod Autoscaler (HPA)
+            <span class="tooltiptext">An API resource in Kubernetes that automatically updates a workload resource (such as a Deployment), with the aim of automatically scaling the workload to match demand.</span>
+        </span>
+        . The HPA automatically increases or decreases the number of pods based on metrics like CPU utilization.
+    </p>
+    <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">HPA Manifest (hpa.yaml)</h3>
+        <p class="text-gray-600 mb-4">Add this file to your chart's `templates` directory. It configures the HPA to maintain an average CPU utilization of 50%, scaling between 1 and 10 pods.</p>
+        <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <code>apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{`{{ include "chat-app-chart.fullname" . }}`}}-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{`{{ include "chat-app-chart.fullname" . }}`}}-deployment
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50</code>
+        </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">HPA Simulation</h3>
+        <p class="text-gray-600 mb-6">Use the slider below to simulate changes in CPU load and see how the HPA would respond by adjusting the number of running pods to meet the demand.</p>
+        <div class="chart-container">
+            <canvas id="hpaChart"></canvas>
+        </div>
+        <div class="mt-6">
+            <label for="cpuSlider" class="block text-sm font-medium text-gray-700">Simulated CPU Load: <span id="cpuValue" class="font-bold">10%</span></label>
+            <input id="cpuSlider" type="range" min="1" max="400" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+            <p class="text-center mt-2 font-semibold text-lg">Pods Running: <span id="podCount">1</span></p>
+        </div>
+    </div>
+</section>

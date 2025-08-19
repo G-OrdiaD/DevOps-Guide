@@ -1,0 +1,40 @@
+<section id="dockerize-content" class="content-section">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">1. Dockerize Application</h2>
+    <p class="text-lg text-gray-600 mb-8">The first step is to containerize the application by creating a `Dockerfile`. This file contains instructions to assemble a Docker image. We use a multi-stage build to create a lean, production-ready image, and a `.dockerignore` file to exclude unnecessary files.</p>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">.dockerignore</h3>
+            <p class="text-gray-600 mb-4">This file prevents local artifacts and dependencies from being copied into the image, keeping it small and secure.</p>
+            <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <code>node_modules
+npm-debug.log
+.env
+Dockerfile
+.git
+.gitignore</code>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Dockerfile</h3>
+            <p class="text-gray-600 mb-4">This file defines a two-stage build process. The first stage builds the app, and the second creates a minimal final image.</p>
+            <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <code># Stage 1: Build a lean production image
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+# Stage 2: Final production image
+FROM node:18-alpine
+WORKDIR /app
+COPY --from=builder /app ./
+EXPOSE 3000
+CMD ["npm", "start"]</code>
+            </div>
+        </div>
+    </div>
+</section>

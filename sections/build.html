@@ -1,0 +1,23 @@
+<section id="build-content" class="content-section">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">2. Build and Test Locally</h2>
+    <p class="text-lg text-gray-600 mb-8">Once the `Dockerfile` is created, you can build the image and run it as a container on your local machine to verify that it works correctly before moving to deployment.</p>
+
+    <div class="space-y-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Build the Docker Image</h3>
+            <p class="text-gray-600 mb-4">This command builds the image from your `Dockerfile` and tags it as `chat-app:latest`.</p>
+            <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <code>docker build -t chat-app:latest .</code>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Run the Container Locally</h3>
+            <p class="text-gray-600 mb-4">This command runs the container, mapping port 3000 on your local machine to port 3000 inside the container. You can then access the app at `http://localhost:3000`.</p>
+            <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <code>docker run -p 3000:3000 chat-app:latest</code>
+            </div>
+        </div>
+    </div>
+</section>
