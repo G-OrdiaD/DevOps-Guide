@@ -198,7 +198,7 @@ Thumbs.db
 ## 👨‍💻 Author
 
 Ordia David Gbakena 
-Frontend Developer and DevOps Engineer
+Software and DevOps Engineer
 
 ## 📄 License
 
